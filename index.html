@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>IUGW2017</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/iuwg.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+        <section>
+          <h1>IUGW</h1>
+        </section>
+        <!-- Customization -->
+				<section>
+          <section>
+            <h1>Customization</h1>
+            <p>User guide</p>
+          </section>
+          <section>
+            <h3>The goal of this tutorial</h3>
+            <p>Customize Invenio v3</p>
+          </section>
+        </section>
+        <!-- /Customization -->
+        <!-- Get started -->
+        <section>
+          <section>
+            <h4>Login to the vagrant VM</h4>
+            <pre><code data-trim data-noescape>
+$ laptop> vagrant ssh web
+$ vagrant> workon invenio
+	</code></pre>
+          </section>
+          <section>
+            <h4>Install the module <mark>invenio-beauty</mark></h4>
+            <pre><code data-trim data-noescape>
+$ vagrant> cd /vagrant/2-customization/invenio-beauty
+$ vagrant> pip install .
+$ vagrant> invenio collect
+$ vagrant> invenio run -h 0.0.0.0</code></pre>
+          </section>
+          <section>
+            <h4>Open your broser to  http://192.168.50.10/</h4>
+            <pre><code data-trim data-noescape>
+$ vagrant> cd /vagrant/2-customization/invenio-beauty
+$ vagrant> pip install .
+$ vagrant> invenio collect
+$ vagrant> invenio run -h 0.0.0.0</code></pre>
+          </section>
+        </section>
+        <!-- /Get started -->
+        <!-- Logo -->
+        <section>
+          <section>
+            <h1>Modify the logo</h1>
+          </section>
+          <section>
+            <h4>Modify the logo</h4>
+            <pre><code data-trim data-noescape>
+THEME_LOGO = 'images/unicorn.png'
+THEME_FRONTPAGE_TITLE = 'Unicorn Institute'
+</code></pre>
+          </section>
+          <section>
+            <h4>Now <mark>run</mark></h4>
+            <pre><code data-trim data-noescape>
+$ vagrant> invenio run -h 0.0.0.0
+</code></pre>
+          </section>
+        </section>
+        <!-- /Logo -->
+        <!-- Facets -->
+        <section>
+          <section>
+            <h1>Facets</h1>
+          </section>
+          <section>
+            <h4>Facets</h4>
+            <pre><code data-trim data-noescape>
+from invenio_records_rest.facets import terms_filter
+
+RECORDS_REST_FACETS = {
+  'marc21': {
+    'aggs': {
+      'author': {
+        'terms': {
+          'field': 'main_entry_personal_name.personal_name'
+        }
+      }
+    },
+    'post_filters': {
+      'author': terms_filter(
+        'main_entry_personal_name.personal_name'
+      )
+    }
+  }
+}
+</code></pre>
+          </section>
+          <section>
+            <h4>Now <mark>run</mark></h4>
+            <pre><code data-trim data-noescape>
+$ vagrant> invenio run -h 0.0.0.0
+</code></pre>
+          </section>
+        </section>
+        <!-- /Facets -->
+        <!-- Add sort options -->
+        <section>
+          <section>
+            <h1>Sort options</h1>
+          </section>
+          <section>
+            <h4>Sort options</h4>
+            <pre><code data-trim data-noescape>
+RECORDS_REST_SORT_OPTIONS = {
+  'records': {
+    'title': {
+      'fields': ['title_statement.title'],
+      'title': 'Record title',
+      'order': 1,
+    }
+  }
+}
+</code></pre>
+          </section>
+          <section>
+            <h4>Now <mark>run</mark></h4>
+            <pre><code data-trim data-noescape>
+$ vagrant> invenio run -h 0.0.0.0
+</code></pre>
+          </section>
+        </section>
+        <!-- /Add sort options -->
+        <!-- Change a detail view -->
+        <section>
+          <section>
+            <h1>Change a detail view</h1>
+          </section>
+          <section>
+            <h4>Change a detail view</h4>
+            <pre><code data-trim data-noescape>
+
+</code></pre>
+          </section>
+          <section>
+            <h4>Now <mark>run</mark></h4>
+            <pre><code data-trim data-noescape>
+$ vagrant> invenio run -h 0.0.0.0
+</code></pre>
+          </section>
+        </section>
+        <!-- /Change a detail view -->
+        <!-- Modify search results template -->
+        <section>
+          <section>
+            <h1>Modify search results template</h1>
+          </section>
+          <section>
+            <h4>Modify search results template</h4>
+            <pre><code data-trim data-noescape>
+
+</code></pre>
+          </section>
+          <section>
+            <h4>Now <mark>run</mark></h4>
+            <pre><code data-trim data-noescape>
+$ vagrant> invenio run -h 0.0.0.0
+</code></pre>
+          </section>
+        </section>
+        <!-- /Modify search results template -->
+        <!-- Modify search results template -->
+        <section>
+          <section>
+            <h1>Change the homepage template</h1>
+          </section>
+          <section>
+            <h4>Change the homepage template</h4>
+            <pre><code data-trim data-noescape>
+
+</code></pre>
+          </section>
+          <section>
+            <h4>Now <mark>run</mark></h4>
+            <pre><code data-trim data-noescape>
+$ vagrant> invenio run -h 0.0.0.0
+</code></pre>
+          </section>
+        </section>
+        <!-- /Modify search results template -->
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
