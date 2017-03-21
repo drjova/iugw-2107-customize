@@ -43,6 +43,12 @@ section.has-light-background {
 	}
 }
 
+mark {
+  color: $backgroundColor;
+}
+.no-transform {
+  text-transform: none!important;
+}
 
 // Theme template ------------------------------
 @import "../template/theme";

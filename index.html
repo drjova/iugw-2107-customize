@@ -7,11 +7,11 @@
 		<title>IUGW2017</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/iuwg.css">
+		<link rel="stylesheet" href="css/theme/iugw.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
-
+    <script src="node_modules/clipboard/dist/clipboard.js"></script>
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -170,20 +170,38 @@ $ vagrant> invenio run -h 0.0.0.0
 </code></pre>
           </section>
 		  <section>
-			<h4>Now open<mark> http://192.168.50.10/search</mark> in your browser</h4>
+			<h4>Now open<mark><a href="http://192.168.50.10/search">http://192.168.50.10/search</a></mark> in your browser</h4>
           </section>
         </section>
         <!-- /Add sort options -->
+
+
+
         <!-- Change a detail view -->
         <section>
           <section>
-            <h1>Change a detail view</h1>
+            <h1>Detail view</h1>
           </section>
           <section>
-            <h4>Change a detail view</h4>
-            <pre><code data-trim data-noescape>
-
+            <h4 class="no-transform">Detail view</h4>
+            <pre><code id="detail-view" data-trim data-noescape>
+RECORDS_UI_ENDPOINTS = {
+  "recid": {
+      "pid_type": "recid",
+      "route": "/records/<pid_value>",
+      "template": "invenio_beauty/detail.html"
+  },
+}
 </code></pre>
+<button class="copy" data-clipboard-text='RECORDS_UI_ENDPOINTS = {
+  "recid": {
+      "pid_type": "recid",
+      "route": "/records/<pid_value>",
+      "template": "invenio_beauty/detail.html"
+  },
+}'>
+    Copy to clipboard
+</button>
           </section>
           <section>
             <h4>Now <mark>run</mark></h4>
@@ -251,5 +269,9 @@ $ vagrant> invenio run -h 0.0.0.0
 				]
 			});
 		</script>
+    <script>
+      // Initialize clipoard
+      var clipboard = new Clipboard('.copy');
+    </script>
 	</body>
 </html>
