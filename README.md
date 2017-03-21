@@ -8,12 +8,12 @@
 
 1. Clone the reveal.js repository
    ```sh
-   $ git clone https://github.com/drjova/iugw-2107-develop.git
+   $ git clone https://github.com/drjova/iugw-2107-customize.git
    ```
 
 1. Navigate to the reveal.js folder
    ```sh
-   $ cd iugw-2107-develop
+   $ cd iugw-2107-customize
    ```
 
 1. Install dependencies
