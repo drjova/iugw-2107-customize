@@ -57,12 +57,7 @@ $ vagrant> invenio collect
 $ vagrant> invenio run -h 0.0.0.0</code></pre>
           </section>
           <section>
-            <h4>Open your broser to  http://192.168.50.10/</h4>
-            <pre><code data-trim data-noescape>
-$ vagrant> cd /vagrant/2-customization/invenio-beauty
-$ vagrant> pip install .
-$ vagrant> invenio collect
-$ vagrant> invenio run -h 0.0.0.0</code></pre>
+			<h4>Now open <mark>http://192.168.50.10/</mark> in your browser</h4>
           </section>
         </section>
         <!-- /Get started -->
@@ -70,6 +65,13 @@ $ vagrant> invenio run -h 0.0.0.0</code></pre>
         <section>
           <section>
             <h1>Modify the logo</h1>
+          </section>
+		  <section>
+            <h4>Access the configuration file</h4>
+            <pre><code data-trim data-noescape>
+$ cdvirtualenv var/instance/
+$ vim invenio.cfg
+</code></pre>
           </section>
           <section>
             <h4>Modify the logo</h4>
@@ -84,6 +86,9 @@ THEME_FRONTPAGE_TITLE = 'Unicorn Institute'
 $ vagrant> invenio run -h 0.0.0.0
 </code></pre>
           </section>
+		  <section>
+			<h4>And access the site in <mark>http://192.168.50.10/</mark></h4>
+		  </section>
         </section>
         <!-- /Logo -->
         <!-- Facets -->
@@ -91,6 +96,13 @@ $ vagrant> invenio run -h 0.0.0.0
           <section>
             <h1>Facets</h1>
           </section>
+		  <section>
+			  <h4>Access the configuration file</h4>
+			  <pre><code data-trim data-noescape>
+			  $ cdvirtualenv var/instance/
+			  $ vim invenio.cfg
+			  </code></pre>
+			</section>
           <section>
             <h4>Facets</h4>
             <pre><code data-trim data-noescape>
@@ -120,12 +132,22 @@ RECORDS_REST_FACETS = {
 $ vagrant> invenio run -h 0.0.0.0
 </code></pre>
           </section>
+		  <section>
+			<h4>Now open<mark> http://192.168.50.10/search</mark> in your browser</h4>
+          </section>
         </section>
         <!-- /Facets -->
         <!-- Add sort options -->
         <section>
           <section>
             <h1>Sort options</h1>
+          </section>
+		  <section>
+            <h4>Access the configuration file</h4>
+            <pre><code data-trim data-noescape>
+$ cdvirtualenv var/instance/
+$ vim invenio.cfg
+</code></pre>
           </section>
           <section>
             <h4>Sort options</h4>
@@ -146,6 +168,9 @@ RECORDS_REST_SORT_OPTIONS = {
             <pre><code data-trim data-noescape>
 $ vagrant> invenio run -h 0.0.0.0
 </code></pre>
+          </section>
+		  <section>
+			<h4>Now open<mark> http://192.168.50.10/search</mark> in your browser</h4>
           </section>
         </section>
         <!-- /Add sort options -->
