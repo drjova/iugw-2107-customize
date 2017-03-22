@@ -86,27 +86,57 @@ $ vagrant> invenio run -h 0.0.0.0</code></pre>
             <h1>Modify the logo</h1>
           </section>
 		  <section>
-            <h4>Access the configuration file</h4>
+			  <h3>Modify the logo</h3>
+            <p>
+              Open invenio.cfg
+            </p>
+            <small>
+              <mark>~/.virtualenv/var/instance/invenio.cfg</mark>
+            </small>
             <pre><code data-trim data-noescape>
 $ cdvirtualenv var/instance/
 $ vim invenio.cfg
 </code></pre>
-          </section>
-          <section>
-            <h4>Modify the logo</h4>
-            <pre><code data-trim data-noescape>
-THEME_LOGO = 'images/unicorn.png'
-THEME_FRONTPAGE_TITLE = 'Unicorn Institute'
-</code></pre>
-          </section>
-          <section>
-            <h4>Now <mark>run</mark></h4>
-            <pre><code data-trim data-noescape>
-$ vagrant> invenio run -h 0.0.0.0
-</code></pre>
+<button class="copy silver-flat-button" data-clipboard-text='cdvirtualenv var/instance/; vim invenio.cfg'>
+    Copy to clipboard
+</button>
           </section>
 		  <section>
-			<h4>And access the site in <mark>http://192.168.50.10/</mark></h4>
+			  <h3 class="no-transform">Modify the logo</h3>
+              <p>
+                add the following code
+              </p>
+              <pre><code data-trim data-noescape>
+				THEME_LOGO = 'images/unicorn.png'
+				THEME_FRONTPAGE_TITLE = 'Unicorn Institute'
+  </code></pre>
+  <button class="copy silver-flat-button" data-clipboard-text='
+THEME_LOGO = "images/unicorn.png"
+THEME_FRONTPAGE_TITLE = "Unicorn Institute"
+'>
+      Copy to clipboard
+  </button>
+            <p>
+              in
+            </p>
+            <p>
+              <small>
+                <mark>~/.virtualenv/var/instance/invenio.cfg</mark>
+              </small>
+            </p>
+          </section>
+		  <section>
+            <h3 class="no-transform">Modify the logo</h3>
+            <p>now run on your terminal</p>
+            <pre><code data-trim data-noescape>
+$ invenio run -h 0.0.0.0
+</code></pre>
+<button class="copy silver-flat-button" data-clipboard-text='invenio run -h 0.0.0.0'>
+    Copy to clipboard
+</button>
+          </section>
+		  <section>
+			<h4>And access the site in <a href="http://192.168.50.10/"><mark>http://192.168.50.10/</mark></a></h4>
 		  </section>
         <!-- /Logo -->
         <!-- Facets -->
@@ -114,75 +144,158 @@ $ vagrant> invenio run -h 0.0.0.0
             <h1>Facets</h1>
           </section>
 		  <section>
-			  <h4>Access the configuration file</h4>
+			  <h3>Facets</h3>
+			  <p>
+				Open invenio.cfg
+			  </p>
+			  <small>
+				<mark>~/.virtualenv/var/instance/invenio.cfg</mark>
+			  </small>
 			  <pre><code data-trim data-noescape>
-			  $ cdvirtualenv var/instance/
-			  $ vim invenio.cfg
-			  </code></pre>
+	$ cdvirtualenv var/instance/
+	$ vim invenio.cfg
+	</code></pre>
+	<button class="copy silver-flat-button" data-clipboard-text='cdvirtualenv var/instance/; vim invenio.cfg'>
+	  Copy to clipboard
+	</button>
 			</section>
-          <section>
-            <h4>Facets</h4>
-            <pre><code data-trim data-noescape>
-from invenio_records_rest.facets import terms_filter
+			<section>
+				<h3 class="no-transform">Facets</h3>
+				<p>
+				  add the following code
+				</p>
+				<pre><code data-trim data-noescape>
+					from invenio_records_rest.facets import terms_filter
 
-RECORDS_REST_FACETS = {
-  'marc21': {
-    'aggs': {
-      'author': {
-        'terms': {
-          'field': 'main_entry_personal_name.personal_name'
-        }
-      }
-    },
-    'post_filters': {
-      'author': terms_filter(
-        'main_entry_personal_name.personal_name'
-      )
-    }
-  }
-}
-</code></pre>
-          </section>
-          <section>
-            <h4>Now <mark>run</mark></h4>
-            <pre><code data-trim data-noescape>
-$ vagrant> invenio run -h 0.0.0.0
-</code></pre>
-          </section>
-		  <section>
-			<h4>Now open<mark> http://192.168.50.10/search</mark> in your browser</h4>
-          </section>
+  				  RECORDS_REST_FACETS = {
+  				    'marc21': {
+  				      'aggs': {
+  				        'author': {
+  				          'terms': {
+  				            'field': 'main_entry_personal_name.personal_name'
+  				          }
+  				        }
+  				      },
+  				      'post_filters': {
+  				        'author': terms_filter(
+  				          'main_entry_personal_name.personal_name'
+  				        )
+  				      }
+  				    }
+  				  }
+			</code></pre>
+			<button class="copy silver-flat-button" data-clipboard-text="
+			from invenio_records_rest.facets import terms_filter
+
+			RECORDS_REST_FACETS = {
+			  'marc21': {
+			    'aggs': {
+			      'author': {
+			        'terms': {
+			          'field': 'main_entry_personal_name.personal_name'
+			        }
+			      }
+			    },
+			    'post_filters': {
+			      'author': terms_filter(
+			        'main_entry_personal_name.personal_name'
+			      )
+			    }
+			  }
+			}
+			">
+			Copy to clipboard
+			</button>
+			  <p>
+				in
+			  </p>
+			  <p>
+				<small>
+				  <mark>~/.virtualenv/var/instance/invenio.cfg</mark>
+				</small>
+			  </p>
+			</section>
+			<section>
+			  <h3 class="no-transform">Facets</h3>
+			  <p>now run on your terminal</p>
+			  <pre><code data-trim data-noescape>
+  $ invenio run -h 0.0.0.0
+  </code></pre>
+  <button class="copy silver-flat-button" data-clipboard-text='invenio run -h 0.0.0.0'>
+	  Copy to clipboard
+  </button>
+			</section>
+			<section>
+			  <h4>Now open<a href="http://192.168.50.10/search"> http://192.168.50.10/search</a> in your browser</h4>
+			  </section>
         <!-- /Facets -->
         <!-- Add sort options -->
           <section>
             <h1>Sort options</h1>
           </section>
 		  <section>
-            <h4>Access the configuration file</h4>
+		  	<h3>Sort options</h3>
+		    <p>
+		  	Open invenio.cfg
+		    </p>
+		    <small>
+		  	<mark>~/.virtualenv/var/instance/invenio.cfg</mark>
+		    </small>
+		    <pre><code data-trim data-noescape>
+		  $ cdvirtualenv var/instance/
+		  $ vim invenio.cfg
+		  </code></pre>
+		  <button class="copy silver-flat-button" data-clipboard-text='cdvirtualenv var/instance/; vim invenio.cfg'>
+		  Copy to clipboard
+		  </button>
+		  </section>
+		  <section>
+			  <h3 class="no-transform">Sort options</h3>
+			  <p>
+				add the following code
+			  </p>
+			  <pre><code data-trim data-noescape>
+				  RECORDS_REST_SORT_OPTIONS = {
+				    'records': {
+				      'title': {
+				        'fields': ['title_statement.title'],
+				        'title': 'Record title',
+				        'order': 1,
+				      }
+				    }
+				  }
+		  </code></pre>
+		  <button class="copy silver-flat-button" data-clipboard-text="
+		  RECORDS_REST_SORT_OPTIONS = {
+		    'records': {
+		      'title': {
+		        'fields': ['title_statement.title'],
+		        'title': 'Record title',
+		        'order': 1,
+		      }
+		    }
+		  }
+		  ">
+		  Copy to clipboard
+		  </button>
+			<p>
+			  in
+			</p>
+			<p>
+			  <small>
+				<mark>~/.virtualenv/var/instance/invenio.cfg</mark>
+			  </small>
+			</p>
+		  </section>
+		  <section>
+            <h3 class="no-transform">Sort options</h3>
+            <p>now run on your terminal</p>
             <pre><code data-trim data-noescape>
-$ cdvirtualenv var/instance/
-$ vim invenio.cfg
+$ invenio run -h 0.0.0.0
 </code></pre>
-          </section>
-          <section>
-            <h4>Sort options</h4>
-            <pre><code data-trim data-noescape>
-RECORDS_REST_SORT_OPTIONS = {
-  'records': {
-    'title': {
-      'fields': ['title_statement.title'],
-      'title': 'Record title',
-      'order': 1,
-    }
-  }
-}
-</code></pre>
-          </section>
-          <section>
-            <h4>Now <mark>run</mark></h4>
-            <pre><code data-trim data-noescape>
-$ vagrant> invenio run -h 0.0.0.0
-</code></pre>
+<button class="copy silver-flat-button" data-clipboard-text='invenio run -h 0.0.0.0'>
+    Copy to clipboard
+</button>
           </section>
 		  <section>
 			<h4>Now open<mark><a href="http://192.168.50.10/search">http://192.168.50.10/search</a></mark> in your browser</h4>
