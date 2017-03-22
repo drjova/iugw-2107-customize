@@ -29,6 +29,21 @@
 		<div class="reveal">
 			<div class="slides">
         <section>
+          <h3>Before we begin</h3>
+          <small><a target="_blank" href="https://github.com/inveniosoftware/iugw2017/tree/master/0-prerequisites">https://github.com/inveniosoftware/iugw2017/tree/master/0-prerequisites</a></small>
+          <small>Initialize Vagrant</small>
+          <pre><code data-trim data-noescape>
+$ sudo mount /dev/sdb1 /mnt
+$ vagrant box add -n iugw2017-demosite-web /mnt/iugw2017-demosite-web.box
+</code></pre>
+<small>Start Vagrant</small>
+<pre><code data-trim data-noescape>
+  $ git clone https://github.com/inveniosoftware/iugw2017
+  $ cd iugw2017
+  $ vagrant up
+</code></pre>
+        </section>
+        <section>
           <h1>IUGW</h1>
         </section>
         <!-- Customization -->
@@ -46,11 +61,12 @@
               </a>
             </p>
           </section>
+
           <section>
             <h3>Open the following link</h3>
             <p>
               <br />
-              <strong><a target="_blank" class="call-for-action-white" href="http://goo.gl/Z6uph8">goo.gl/Z6uph8</a></strong>
+              <strong><a target="_blank" class="call-for-action-white" href="https://goo.gl/yv0srb">goo.gl/yv0srb</a></strong>
             </p>
           </section>
         <!-- /Customization -->
@@ -74,10 +90,10 @@ $ vagrant> invenio run -h 0.0.0.0</code></pre>
 </button>
           </section>
           <section>
-			<h4>Now open</h4>
-      <a target="_blank" class="call-for-action-clean" href="http://192.168.50.10/">
-        http://192.168.50.10/
-      </a>
+      			<h4>Now open on your browser</h4>
+            <a target="_blank" class="call-for-action-clean" href="http://192.168.50.10/">
+              http://192.168.50.10/
+            </a>
           </section>
         <!-- /Get started -->
         <!-- Logo -->
@@ -363,6 +379,12 @@ $ invenio run -h 0.0.0.0
     Copy to clipboard
 </button>
           </section>
+          <section>
+            <h4>Now open on your browser</h4>
+            <a target="_blank" class="call-for-action-clean" href="http://192.168.50.10/">
+              http://192.168.50.10/
+            </a>
+          </section>
         <!-- /Change a detail view -->
         <!-- Modify search results template -->
         <section>
@@ -414,6 +436,12 @@ $ invenio run -h 0.0.0.0
   Copy to clipboard
 </button>
         </section>
+        <section>
+          <h4>Now open on your browser</h4>
+          <a target="_blank" class="call-for-action-clean" href="http://192.168.50.10/">
+            http://192.168.50.10/
+          </a>
+        </section>
         <!-- /Modify search results template -->
         <!-- Change homepage -->
         <section>
@@ -461,10 +489,16 @@ THEME_FRONTPAGE_TEMPLATE = 'invenio_beauty/home.html'
           <pre><code data-trim data-noescape>
 $ invenio run -h 0.0.0.0
 </code></pre>
-<button class="copy silver-flat-button" data-clipboard-text='invenio run -h 0.0.0.0'>
-  Copy to clipboard
-</button>
-        </section>
+      <button class="copy silver-flat-button" data-clipboard-text='invenio run -h 0.0.0.0'>
+        Copy to clipboard
+      </button>
+</section>
+<section>
+  <h4>Now open on your browser</h4>
+  <a target="_blank" class="call-for-action-clean" href="http://192.168.50.10/">
+    http://192.168.50.10/
+  </a>
+</section>
         <!-- /Change homepage -->
         <!-- All together -->
         <section>
@@ -473,6 +507,14 @@ $ invenio run -h 0.0.0.0
 <button class="copy silver-flat-button" data-clipboard-text='cd /vagrant/iugw2017/2-customization; cat final.cfg >> ~/.virtualenvs/invenio/var/instance/invenio.cfg'>
   Copy to clipboard
 </button>
+<p>
+  paste to the following file
+</p>
+<p>
+  <small>
+    <mark>~/.virtualenv/var/instance/invenio.cfg</mark>
+  </small>
+</p>
         </section>
         <!-- /All together -->
 			</div>
