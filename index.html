@@ -32,7 +32,6 @@
           <h1>IUGW</h1>
         </section>
         <!-- Customization -->
-
           <section>
             <h1>Customization</h1>
             <p>User guide</p>
@@ -40,14 +39,20 @@
           <section>
             <h3>The goal of this tutorial</h3>
             <p>Customize Invenio v3</p>
+            <p>
+              <br />
+              <a target="_blank" class="call-for-action-clean" href="http://invenio.readthedocs.io/en/iugw2017/usersguide/tutorial/customize.html">
+                full tutorial
+              </a>
+            </p>
           </section>
           <section>
             <h3>Open the following link</h3>
             <p>
-              <strong><a href="http://goo.gl/Z6uph8">goo.gl/Z6uph8</a></strong>
+              <br />
+              <strong><a target="_blank" class="call-for-action-white" href="http://goo.gl/Z6uph8">goo.gl/Z6uph8</a></strong>
             </p>
           </section>
-
         <!-- /Customization -->
         <!-- Get started -->
           <section>
@@ -58,15 +63,21 @@ $ vagrant> workon invenio
 	</code></pre>
           </section>
           <section>
-            <h4>Install the module <mark>invenio-beauty</mark></h4>
+            <h4>Install the module invenio-beauty</h4>
             <pre><code data-trim data-noescape>
 $ vagrant> cd /vagrant/2-customization/invenio-beauty
 $ vagrant> pip install .
 $ vagrant> invenio collect
 $ vagrant> invenio run -h 0.0.0.0</code></pre>
+<button class="copy silver-flat-button" data-clipboard-text="cd /vagrant/2-customization/invenio-beauty; pip install . ; invenio collect ; invenio run -h 0.0.0.0">
+  Copy to clipboard
+</button>
           </section>
           <section>
-			<h4>Now open <mark>http://192.168.50.10/</mark> in your browser</h4>
+			<h4>Now open</h4>
+      <a target="_blank" class="call-for-action-clean" href="http://192.168.50.10/">
+        http://192.168.50.10/
+      </a>
           </section>
         <!-- /Get started -->
         <!-- Logo -->
@@ -97,10 +108,8 @@ $ vagrant> invenio run -h 0.0.0.0
 		  <section>
 			<h4>And access the site in <mark>http://192.168.50.10/</mark></h4>
 		  </section>
-
         <!-- /Logo -->
         <!-- Facets -->
-
           <section>
             <h1>Facets</h1>
           </section>
@@ -143,10 +152,8 @@ $ vagrant> invenio run -h 0.0.0.0
 		  <section>
 			<h4>Now open<mark> http://192.168.50.10/search</mark> in your browser</h4>
           </section>
-
         <!-- /Facets -->
         <!-- Add sort options -->
-
           <section>
             <h1>Sort options</h1>
           </section>
@@ -180,13 +187,8 @@ $ vagrant> invenio run -h 0.0.0.0
 		  <section>
 			<h4>Now open<mark><a href="http://192.168.50.10/search">http://192.168.50.10/search</a></mark> in your browser</h4>
           </section>
-
         <!-- /Add sort options -->
-
-
-
         <!-- Change a detail view -->
-
           <section>
             <h1>Detail view</h1>
           </section>
@@ -240,7 +242,7 @@ RECORDS_UI_ENDPOINTS = {
           </section>
           <section>
             <h3 class="no-transform">Detail view</h3>
-            <p>now run in your browser</p>
+            <p>now run on your terminal</p>
             <pre><code data-trim data-noescape>
 $ invenio run -h 0.0.0.0
 </code></pre>
@@ -248,44 +250,109 @@ $ invenio run -h 0.0.0.0
     Copy to clipboard
 </button>
           </section>
-
         <!-- /Change a detail view -->
         <!-- Modify search results template -->
-
-          <section>
-            <h1>Modify search results template</h1>
-          </section>
-          <section>
-            <h4>Modify search results template</h4>
-            <pre><code data-trim data-noescape>
-
+        <section>
+          <h1>Search results template</h1>
+        </section>
+        <section>
+          <h3 class="no-transform">Search results template</h3>
+          <p>
+            open invenio.cfg
+          </p>
+          <small>
+            <mark>~/.virtualenv/var/instance/invenio.cfg</mark>
+          </small>
+          <pre><code data-trim data-noescape>
+$ cdvirtualenv var/instance/
+$ vim invenio.cfg
 </code></pre>
-          </section>
-          <section>
-            <h4>Now <mark>run</mark></h4>
-            <pre><code data-trim data-noescape>
-$ vagrant> invenio run -h 0.0.0.0
+<button class="copy silver-flat-button" data-clipboard-text='cdvirtualenv var/instance/; vim invenio.cfg'>
+  Copy to clipboard
+</button>
+        </section>
+        <section>
+          <h3 class="no-transform">Search results template</h3>
+          <p>
+            add the following code
+          </p>
+          <pre><code data-trim data-noescape>
+SEARCH_UI_JSTEMPLATE_RESULTS = 'templates/invenio_beauty/results.html'
 </code></pre>
-          </section>
-
+<button class="copy silver-flat-button" data-clipboard-text="SEARCH_UI_JSTEMPLATE_RESULTS = 'templates/invenio_beauty/results.html'">
+  Copy to clipboard
+</button>
+        <p>
+          in
+        </p>
+        <p>
+          <small>
+            <mark>~/.virtualenv/var/instance/invenio.cfg</mark>
+          </small>
+        </p>
+        </section>
+        <section>
+          <h3 class="no-transform">Search results template</h3>
+          <p>now run on your terminal</p>
+          <pre><code data-trim data-noescape>
+$ invenio run -h 0.0.0.0
+</code></pre>
+<button class="copy silver-flat-button" data-clipboard-text='invenio run -h 0.0.0.0'>
+  Copy to clipboard
+</button>
+        </section>
         <!-- /Modify search results template -->
-        <!-- Modify search results template -->
-          <section>
-            <h1>Change the homepage template</h1>
-          </section>
-          <section>
-            <h4>Change the homepage template</h4>
-            <pre><code data-trim data-noescape>
-
+        <!-- Change homepage -->
+        <section>
+          <h1>Change homepage</h1>
+        </section>
+        <section>
+          <h3 class="no-transform">Change homepage</h3>
+          <p>
+            open invenio.cfg
+          </p>
+          <small>
+            <mark>~/.virtualenv/var/instance/invenio.cfg</mark>
+          </small>
+          <pre><code data-trim data-noescape>
+$ cdvirtualenv var/instance/
+$ vim invenio.cfg
 </code></pre>
-          </section>
-          <section>
-            <h4>Now <mark>run</mark></h4>
-            <pre><code data-trim data-noescape>
-$ vagrant> invenio run -h 0.0.0.0
+<button class="copy silver-flat-button" data-clipboard-text='cdvirtualenv var/instance/; vim invenio.cfg'>
+  Copy to clipboard
+</button>
+        </section>
+        <section>
+          <h3 class="no-transform">Change homepage</h3>
+          <p>
+            add the following code
+          </p>
+          <pre><code data-trim data-noescape>
+THEME_FRONTPAGE_TEMPLATE = 'invenio_beauty/home.html'
 </code></pre>
-          </section>
-        <!-- /Modify search results template -->
+<button class="copy silver-flat-button" data-clipboard-text="THEME_FRONTPAGE_TEMPLATE = 'invenio_beauty/home.html'">
+  Copy to clipboard
+</button>
+        <p>
+          in
+        </p>
+        <p>
+          <small>
+            <mark>~/.virtualenv/var/instance/invenio.cfg</mark>
+          </small>
+        </p>
+        </section>
+        <section>
+          <h3 class="no-transform">Change homepage</h3>
+          <p>now run on your terminal</p>
+          <pre><code data-trim data-noescape>
+$ invenio run -h 0.0.0.0
+</code></pre>
+<button class="copy silver-flat-button" data-clipboard-text='invenio run -h 0.0.0.0'>
+  Copy to clipboard
+</button>
+        </section>
+        <!-- /Change homepage -->
 			</div>
 		</div>
 
