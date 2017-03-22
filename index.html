@@ -32,12 +32,12 @@
           <h3>Before we begin</h3>
           <small><a target="_blank" href="https://github.com/inveniosoftware/iugw2017/tree/master/0-prerequisites">https://github.com/inveniosoftware/iugw2017/tree/master/0-prerequisites</a></small>
           <small>Initialize Vagrant</small>
-          <pre><code data-trim data-noescape>
+          <pre><code data-trim=""  data-noescape>
 $ sudo mount /dev/sdb1 /mnt
 $ vagrant box add -n iugw2017-demosite-web /mnt/iugw2017-demosite-web.box
 </code></pre>
 <small>Start Vagrant</small>
-<pre><code data-trim data-noescape>
+<pre><code data-trim=""  data-noescape>
   $ git clone https://github.com/inveniosoftware/iugw2017
   $ cd iugw2017
   $ vagrant up
@@ -73,14 +73,14 @@ $ vagrant box add -n iugw2017-demosite-web /mnt/iugw2017-demosite-web.box
         <!-- Get started -->
           <section>
             <h4>Login to the vagrant VM</h4>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim=""  data-noescape>
 $ laptop> vagrant ssh web
 $ vagrant> workon invenio
 	</code></pre>
           </section>
           <section>
             <h4>Install the module invenio-beauty</h4>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim=""  data-noescape>
 $ vagrant> cd /vagrant/2-customization/invenio-beauty
 $ vagrant> pip install .
 $ vagrant> invenio collect
@@ -109,7 +109,7 @@ $ vagrant> invenio run -h 0.0.0.0</code></pre>
             <small>
               <mark>~/.virtualenv/var/instance/invenio.cfg</mark>
             </small>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim=""  data-noescape>
 $ cdvirtualenv var/instance/
 $ vim invenio.cfg
 </code></pre>
@@ -122,7 +122,7 @@ $ vim invenio.cfg
               <p>
                 add the following code
               </p>
-              <pre><code data-trim data-noescape>
+              <pre><code data-trim=""  data-noescape>
 				THEME_LOGO = 'images/unicorn.png'
 				THEME_FRONTPAGE_TITLE = 'Unicorn Institute'
   </code></pre>
@@ -144,7 +144,7 @@ THEME_FRONTPAGE_TITLE = "Unicorn Institute"
 		  <section>
             <h3 class="no-transform">Modify the logo</h3>
             <p>now run on your terminal</p>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim=""  data-noescape>
 $ invenio run -h 0.0.0.0
 </code></pre>
 <button class="copy silver-flat-button" data-clipboard-text='invenio run -h 0.0.0.0'>
@@ -170,7 +170,7 @@ $ invenio run -h 0.0.0.0
 			  <small>
 				<mark>~/.virtualenv/var/instance/invenio.cfg</mark>
 			  </small>
-			  <pre><code data-trim data-noescape>
+			  <pre><code data-trim=""  data-noescape>
 	$ cdvirtualenv var/instance/
 	$ vim invenio.cfg
 	</code></pre>
@@ -183,7 +183,7 @@ $ invenio run -h 0.0.0.0
 				<p>
 				  add the following code
 				</p>
-				<pre><code data-trim data-noescape>
+				<pre><code data-trim=""  data-noescape>
 from invenio_records_rest.facets import terms_filter
 
 RECORDS_REST_FACETS = {
@@ -229,7 +229,7 @@ RECORDS_REST_FACETS = {
 			<section>
 			  <h3 class="no-transform">Facets</h3>
 			  <p>now run on your terminal</p>
-			  <pre><code data-trim data-noescape>
+			  <pre><code data-trim=""  data-noescape>
   $ invenio run -h 0.0.0.0
   </code></pre>
   <button class="copy silver-flat-button" data-clipboard-text='invenio run -h 0.0.0.0'>
@@ -255,7 +255,7 @@ RECORDS_REST_FACETS = {
 		    <small>
 		  	<mark>~/.virtualenv/var/instance/invenio.cfg</mark>
 		    </small>
-		    <pre><code data-trim data-noescape>
+		    <pre><code data-trim=""  data-noescape>
 		  $ cdvirtualenv var/instance/
 		  $ vim invenio.cfg
 		  </code></pre>
@@ -268,7 +268,7 @@ RECORDS_REST_FACETS = {
 			  <p>
 				add the following code
 			  </p>
-			  <pre><code data-trim data-noescape>
+			  <pre><code data-trim=""  data-noescape>
 				  RECORDS_REST_SORT_OPTIONS = {
 				    'records': {
 				      'title': {
@@ -304,7 +304,7 @@ RECORDS_REST_SORT_OPTIONS = {
 		  <section>
             <h3 class="no-transform">Sort options</h3>
             <p>now run on your terminal</p>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim=""  data-noescape>
 $ invenio run -h 0.0.0.0
 </code></pre>
 <button class="copy silver-flat-button" data-clipboard-text='invenio run -h 0.0.0.0'>
@@ -330,7 +330,7 @@ $ invenio run -h 0.0.0.0
             <small>
               <mark>~/.virtualenv/var/instance/invenio.cfg</mark>
             </small>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim=""  data-noescape>
 $ cdvirtualenv var/instance/
 $ vim invenio.cfg
 </code></pre>
@@ -343,7 +343,7 @@ $ vim invenio.cfg
             <p>
               add the following code
             </p>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim=""  data-noescape>
 RECORDS_UI_ENDPOINTS = {
   "recid": {
       "pid_type": "recid",
@@ -373,7 +373,7 @@ RECORDS_UI_ENDPOINTS = {
           <section>
             <h3 class="no-transform">Detail view</h3>
             <p>now run on your terminal</p>
-            <pre><code data-trim data-noescape>
+            <pre><code data-trim=""  data-noescape>
 $ invenio run -h 0.0.0.0
 </code></pre>
 <button class="copy silver-flat-button" data-clipboard-text='invenio run -h 0.0.0.0'>
@@ -399,7 +399,7 @@ $ invenio run -h 0.0.0.0
           <small>
             <mark>~/.virtualenv/var/instance/invenio.cfg</mark>
           </small>
-          <pre><code data-trim data-noescape>
+          <pre><code data-trim=""  data-noescape>
 $ cdvirtualenv var/instance/
 $ vim invenio.cfg
 </code></pre>
@@ -412,7 +412,7 @@ $ vim invenio.cfg
           <p>
             add the following code
           </p>
-          <pre><code data-trim data-noescape>
+          <pre><code data-trim=""  data-noescape>
 SEARCH_UI_JSTEMPLATE_RESULTS = 'templates/invenio_beauty/results.html'
 </code></pre>
 <button class="copy silver-flat-button" data-clipboard-text="SEARCH_UI_JSTEMPLATE_RESULTS = 'templates/invenio_beauty/results.html'">
@@ -430,7 +430,7 @@ SEARCH_UI_JSTEMPLATE_RESULTS = 'templates/invenio_beauty/results.html'
         <section>
           <h3 class="no-transform">Search results template</h3>
           <p>now run on your terminal</p>
-          <pre><code data-trim data-noescape>
+          <pre><code data-trim=""  data-noescape>
 $ invenio run -h 0.0.0.0
 </code></pre>
 <button class="copy silver-flat-button" data-clipboard-text='invenio run -h 0.0.0.0'>
@@ -456,7 +456,7 @@ $ invenio run -h 0.0.0.0
           <small>
             <mark>~/.virtualenv/var/instance/invenio.cfg</mark>
           </small>
-          <pre><code data-trim data-noescape>
+          <pre><code data-trim=""  data-noescape>
 $ cdvirtualenv var/instance/
 $ vim invenio.cfg
 </code></pre>
@@ -469,7 +469,7 @@ $ vim invenio.cfg
           <p>
             add the following code
           </p>
-          <pre><code data-trim data-noescape>
+          <pre><code data-trim=""  data-noescape>
 THEME_FRONTPAGE_TEMPLATE = 'invenio_beauty/home.html'
 </code></pre>
 <button class="copy silver-flat-button" data-clipboard-text="THEME_FRONTPAGE_TEMPLATE = 'invenio_beauty/home.html'">
@@ -487,7 +487,7 @@ THEME_FRONTPAGE_TEMPLATE = 'invenio_beauty/home.html'
         <section>
           <h3 class="no-transform">Change homepage</h3>
           <p>now run on your terminal</p>
-          <pre><code data-trim data-noescape>
+          <pre><code data-trim=""  data-noescape>
 $ invenio run -h 0.0.0.0
 </code></pre>
       <button class="copy silver-flat-button" data-clipboard-text='invenio run -h 0.0.0.0'>
@@ -504,7 +504,7 @@ $ invenio run -h 0.0.0.0
         <!-- All together -->
         <section>
           <h3 class="no-transform">All together</h3>
-		  <pre><code data-trim data-noescape>
+		  <pre><code data-trim=""  data-noescape>
 $ cd /vagrant/iugw2017/2-customization
 $ cat final.cfg >> ~/.virtualenvs/invenio/var/instance/invenio.cfg
 </code></pre>
