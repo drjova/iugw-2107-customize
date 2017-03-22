@@ -59,6 +59,9 @@ mark {
   -webkit-box-shadow: none;
   box-shadow: none; }
 
+code {
+  font-size: 0.85em !important; }
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/

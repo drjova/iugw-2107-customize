@@ -57,7 +57,7 @@ $ vagrant box add -n iugw2017-demosite-web /mnt/iugw2017-demosite-web.box
             <p>
               <br />
               <a target="_blank" class="call-for-action-clean" href="http://invenio.readthedocs.io/en/iugw2017/usersguide/tutorial/customize.html">
-                full tutorial
+                <small>http://invenio.readthedocs.io/en/iugw2017/usersguide/tutorial/customize.html</small>
               </a>
             </p>
           </section>
@@ -152,8 +152,11 @@ $ invenio run -h 0.0.0.0
 </button>
           </section>
 		  <section>
-			<h4>And access the site in <a href="http://192.168.50.10/"><mark>http://192.168.50.10/</mark></a></h4>
-		  </section>
+      			<h4>Now open on your browser</h4>
+            <a target="_blank" class="call-for-action-clean" href="http://192.168.50.10/">
+              http://192.168.50.10/
+            </a>
+          </section>
         <!-- /Logo -->
         <!-- Facets -->
           <section>
@@ -181,55 +184,47 @@ $ invenio run -h 0.0.0.0
 				  add the following code
 				</p>
 				<pre><code data-trim data-noescape>
-					from invenio_records_rest.facets import terms_filter
+from invenio_records_rest.facets import terms_filter
 
-  				  RECORDS_REST_FACETS = {
-  				    'marc21': {
-  				      'aggs': {
-  				        'author': {
-  				          'terms': {
-  				            'field': 'main_entry_personal_name.personal_name'
-  				          }
-  				        }
-  				      },
-  				      'post_filters': {
-  				        'author': terms_filter(
-  				          'main_entry_personal_name.personal_name'
-  				        )
-  				      }
-  				    }
-  				  }
+RECORDS_REST_FACETS = {
+'marc21': {
+  'aggs': {
+    'author': {
+      'terms': {
+        'field': 'main_entry_personal_name.personal_name'
+      }
+    }
+  },
+  'post_filters': {
+    'author': terms_filter(
+      'main_entry_personal_name.personal_name'
+    )
+  }
+}
+}
 			</code></pre>
 			<button class="copy silver-flat-button" data-clipboard-text="
-			from invenio_records_rest.facets import terms_filter
+from invenio_records_rest.facets import terms_filter
 
-			RECORDS_REST_FACETS = {
-			  'marc21': {
-			    'aggs': {
-			      'author': {
-			        'terms': {
-			          'field': 'main_entry_personal_name.personal_name'
-			        }
-			      }
-			    },
-			    'post_filters': {
-			      'author': terms_filter(
-			        'main_entry_personal_name.personal_name'
-			      )
-			    }
-			  }
-			}
+RECORDS_REST_FACETS = {
+  'marc21': {
+    'aggs': {
+      'author': {
+        'terms': {
+          'field': 'main_entry_personal_name.personal_name'
+        }
+      }
+    },
+    'post_filters': {
+      'author': terms_filter(
+        'main_entry_personal_name.personal_name'
+      )
+    }
+  }
+}
 			">
 			Copy to clipboard
 			</button>
-			  <p>
-				in
-			  </p>
-			  <p>
-				<small>
-				  <mark>~/.virtualenv/var/instance/invenio.cfg</mark>
-				</small>
-			  </p>
 			</section>
 			<section>
 			  <h3 class="no-transform">Facets</h3>
@@ -242,8 +237,11 @@ $ invenio run -h 0.0.0.0
   </button>
 			</section>
 			<section>
-			  <h4>Now open<a href="http://192.168.50.10/search"> http://192.168.50.10/search</a> in your browser</h4>
-			  </section>
+        			<h4>Now open on your browser</h4>
+              <a target="_blank" class="call-for-action-clean" href="http://192.168.50.10/search">
+                http://192.168.50.10/search
+              </a>
+            </section>
         <!-- /Facets -->
         <!-- Add sort options -->
           <section>
@@ -282,15 +280,15 @@ $ invenio run -h 0.0.0.0
 				  }
 		  </code></pre>
 		  <button class="copy silver-flat-button" data-clipboard-text="
-		  RECORDS_REST_SORT_OPTIONS = {
-		    'records': {
-		      'title': {
-		        'fields': ['title_statement.title'],
-		        'title': 'Record title',
-		        'order': 1,
-		      }
-		    }
-		  }
+RECORDS_REST_SORT_OPTIONS = {
+	'records': {
+	  'title': {
+	    'fields': ['title_statement.title'],
+	    'title': 'Record title',
+	    'order': 1,
+	  }
+	}
+}
 		  ">
 		  Copy to clipboard
 		  </button>
@@ -314,8 +312,11 @@ $ invenio run -h 0.0.0.0
 </button>
           </section>
 		  <section>
-			<h4>Now open<mark><a href="http://192.168.50.10/search">http://192.168.50.10/search</a></mark> in your browser</h4>
-          </section>
+				  <h4>Now open on your browser</h4>
+			<a target="_blank" class="call-for-action-clean" href="http://192.168.50.10/search">
+			  http://192.168.50.10/search
+			</a>
+		  </section>
         <!-- /Add sort options -->
         <!-- Change a detail view -->
           <section>
@@ -381,8 +382,8 @@ $ invenio run -h 0.0.0.0
           </section>
           <section>
             <h4>Now open on your browser</h4>
-            <a target="_blank" class="call-for-action-clean" href="http://192.168.50.10/">
-              http://192.168.50.10/
+            <a target="_blank" class="call-for-action-clean" href="http://192.168.50.10/records/1">
+              http://192.168.50.10/records/1
             </a>
           </section>
         <!-- /Change a detail view -->
@@ -438,8 +439,8 @@ $ invenio run -h 0.0.0.0
         </section>
         <section>
           <h4>Now open on your browser</h4>
-          <a target="_blank" class="call-for-action-clean" href="http://192.168.50.10/">
-            http://192.168.50.10/
+          <a target="_blank" class="call-for-action-clean" href="http://192.168.50.10/search">
+            http://192.168.50.10/search
           </a>
         </section>
         <!-- /Modify search results template -->
@@ -503,7 +504,10 @@ $ invenio run -h 0.0.0.0
         <!-- All together -->
         <section>
           <h3 class="no-transform">All together</h3>
-          <br />
+		  <pre><code data-trim data-noescape>
+$ cd /vagrant/iugw2017/2-customization
+$ cat final.cfg >> ~/.virtualenvs/invenio/var/instance/invenio.cfg
+</code></pre>
 <button class="copy silver-flat-button" data-clipboard-text='cd /vagrant/iugw2017/2-customization; cat final.cfg >> ~/.virtualenvs/invenio/var/instance/invenio.cfg'>
   Copy to clipboard
 </button>
